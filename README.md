@@ -30,7 +30,7 @@ Automation allows to:
 The model is based on the **U-Net** architecture, designed specifically for biomedical image segmentation.
 U-Net consists of an **encoder-decoder** structure with **skip connections**, which help preserve fine details during upsampling.
 
-![U-Net Architecture](images/unet_architecture.png)
+![U-Net Architecture](images/unet.png)
 
 ---
 
@@ -49,7 +49,7 @@ After comparison, **BraTS** was selected because it includes:
 * multiple MRI modalities (T1, T2, FLAIR, etc.),
 * a large number of labeled samples for training.
 
-![Example MRI Images](images/brats_samples.png)
+![Example MRI Images](images/brats.png)
 
 ---
 
@@ -60,7 +60,7 @@ After comparison, **BraTS** was selected because it includes:
 3. Data augmentation (flipping, rotation, shifting)
 4. Splitting into training, validation, and test sets
 
-![Data Preprocessing](images/data_preprocessing.png)
+![Data Preprocessing](images/preprocessing.png)
 
 ---
 
@@ -69,7 +69,7 @@ After comparison, **BraTS** was selected because it includes:
 The model was trained using the BraTS dataset.
 During training, **loss decreased and accuracy improved**, indicating proper learning behavior.
 
-![Training Progress](images/training_plot.png)
+![Training Progress](images/training_progress.png)
 
 ---
 
@@ -78,7 +78,7 @@ During training, **loss decreased and accuracy improved**, indicating proper lea
 The model was evaluated on a **held-out test set** that was not used during training.
 The trained model successfully detected tumor regions with high accuracy.
 
-![Segmentation Results](images/segmentation_results.png)
+![Segmentation Results](images/results.png)
 
 ---
 
@@ -91,7 +91,7 @@ The user interface allows:
 * running segmentation,
 * visualizing detected tumor regions.
 
-![Program Interface](images/gui_screenshot.png)
+![Program Interface](images/gui.png)
 
 ---
 
@@ -115,7 +115,7 @@ python final.py
 
 ## 📊 Usage Example
 
-![Example Output](images/example_output.png)
+![Example Output](images/output.png)
 
 ---
 
@@ -129,3 +129,4 @@ As a result of this work:
 * a user-friendly interface was created for medical image analysis.
 
 This project can be used in **diagnostic systems** and **research applications** for medical imaging.
+
