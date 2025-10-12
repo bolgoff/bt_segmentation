@@ -1,107 +1,103 @@
-# 🧠 Brain Tumor Segmentation (Russian)
+# 🧠 Brain Tumor Segmentation
 
-## 📘 Описание проекта
+## 📘 Project Overview
 
-Проект посвящён разработке **алгоритма и программы для сегментации опухолей мозга** на МРТ-изображениях с использованием **глубоких нейронных сетей**.
-Целью работы является **ускорение и повышение точности диагностики**, что критично для своевременного лечения пациентов.
+This project is dedicated to the **development of an algorithm and software for brain tumor segmentation** from MRI images using **deep learning** methods.
+The goal is to **improve the speed and accuracy of diagnosis**, which is critical for timely medical treatment.
 
-Автоматизация процесса позволяет:
+Automation allows to:
 
-* снизить нагрузку на врачей-радиологов,
-* минимизировать вероятность ошибок ручного анализа,
-* обеспечить стабильное качество обработки снимков.
-
----
-
-## 🧩 Используемые технологии
-
-* **Язык программирования:** Python
-* **Библиотеки:**
-
-  * `TensorFlow`, `Keras` — построение и обучение нейросети
-  * `scikit-learn` — обработка и анализ данных
-  * `NumPy`, `Matplotlib` — визуализация и обработка изображений
-  * `PyQt5` — разработка графического интерфейса пользователя
+* reduce the workload on radiologists,
+* minimize the risk of human errors,
+* ensure consistent image analysis quality.
 
 ---
 
-## 🧠 Архитектура модели
+## 🧩 Technologies Used
 
-Для реализации задачи использовалась **архитектура U-Net**, специально разработанная для задач медицинской сегментации.
-Модель состоит из **энкодера и декодера**, связанных пропусками (skip connections), что позволяет сохранять детали изображений при восстановлении.
+* **Programming language:** Python
+* **Libraries and frameworks:**
+
+  * `TensorFlow`, `Keras` — building and training the neural network
+  * `scikit-learn` — data preprocessing and evaluation
+  * `NumPy`, `Matplotlib` — data manipulation and visualization
+  * `PyQt5` — GUI development
+
+---
+
+## 🧠 Model Architecture
+
+The model is based on the **U-Net** architecture, designed specifically for biomedical image segmentation.
+U-Net consists of an **encoder-decoder** structure with **skip connections**, which help preserve fine details during upsampling.
 
 ![U-Net Architecture](images/unet_architecture.png)
 
 ---
 
-## 🗂️ Датасеты
+## 🗂️ Dataset
 
-Для обучения и тестирования рассматривались четыре наиболее известных набора данных:
+Four popular public datasets were analyzed:
 
 * BraTS
 * ASNR
 * TSIA
 * FigShare
 
-После сравнительного анализа был выбран **BraTS**, так как он содержит:
+After comparison, **BraTS** was selected because it includes:
 
-* размеченные опухоли разных типов,
-* изображения в нескольких модальностях (T1, T2, FLAIR и др.),
-* большое количество данных для обучения.
+* well-annotated tumor masks,
+* multiple MRI modalities (T1, T2, FLAIR, etc.),
+* a large number of labeled samples for training.
 
 ![Example MRI Images](images/brats_samples.png)
 
 ---
 
-## ⚙️ Предобработка данных
+## ⚙️ Data Preprocessing
 
-1. Нормализация интенсивности пикселей
-2. Изменение размера изображений
-3. Аугментация (отражение, поворот, сдвиг)
-4. Разделение выборки на обучающую, валидационную и тестовую части
+1. Intensity normalization
+2. Image resizing
+3. Data augmentation (flipping, rotation, shifting)
+4. Splitting into training, validation, and test sets
 
 ![Data Preprocessing](images/data_preprocessing.png)
 
 ---
 
-## 📈 Обучение модели
+## 📈 Model Training
 
-Обучение проводилось на датасете BraTS.
-В процессе наблюдалось **уменьшение ошибки и рост точности**, что свидетельствует о корректном обучении модели.
+The model was trained using the BraTS dataset.
+During training, **loss decreased and accuracy improved**, indicating proper learning behavior.
 
 ![Training Progress](images/training_plot.png)
 
 ---
 
-## 🧪 Результаты
+## 🧪 Results
 
-Проверка модели проводилась на **отложенной выборке**.
-Модель успешно выявила области опухолей на изображениях с высокой точностью.
+The model was evaluated on a **held-out test set** that was not used during training.
+The trained model successfully detected tumor regions with high accuracy.
 
 ![Segmentation Results](images/segmentation_results.png)
 
 ---
 
-## 💻 Интерфейс программы
+## 💻 Graphical Interface
 
-Приложение имеет графический интерфейс, реализованный с помощью **PyQt5**.
-Пользователь может:
+The desktop application was implemented using **PyQt5**.
+The user interface allows:
 
-* загрузить МРТ изображение,
-* запустить процесс сегментации,
-* получить визуализацию выделенной области опухоли.
+* uploading MRI images,
+* running segmentation,
+* visualizing detected tumor regions.
 
 ![Program Interface](images/gui_screenshot.png)
 
 ---
 
-## 🚀 Установка и запуск
+## 🚀 Installation and Run
 
-### Требования:
-
-* Python 3.9+
-
-### Установка:
+### Installation
 
 ```bash
 git clone https://github.com/username/brain-tumor-segmentation.git
@@ -109,7 +105,7 @@ cd brain-tumor-segmentation
 pip install -r requirements.txt
 ```
 
-### Запуск программы:
+### Running the Application
 
 ```bash
 python final.py
@@ -117,25 +113,19 @@ python final.py
 
 ---
 
-## 📊 Примеры использования
+## 📊 Usage Example
 
 ![Example Output](images/example_output.png)
 
 ---
 
-## 📚 Заключение
+## 📚 Conclusion
 
-В результате проделанной работы:
+As a result of this work:
 
-* разработан алгоритм и программа для сегментации опухолей мозга на МРТ изображениях,
-* проведён анализ существующих подходов,
-* реализована нейросетевая архитектура на основе U-Net,
-* создан удобный пользовательский интерфейс.
+* an algorithm and software for brain tumor segmentation from MRI images were developed,
+* a comparative analysis of modern approaches was conducted,
+* a U-Net–based neural architecture was implemented,
+* a user-friendly interface was created for medical image analysis.
 
-Проект может быть использован в **диагностических системах** и в **исследовательских целях**.
-
----
-
-## 👤 Автор
-
-**Андрей Болгов**
+This project can be used in **diagnostic systems** and **research applications** for medical imaging.
